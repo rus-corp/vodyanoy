@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+{% load head_tags %}
+
+{% block content %}
+<section class="section-slider">
+  <div class="slider-container">
+    <div class="slider-top">
+      <img class="arrow arrow-right" src="{% static 'img/icon/arrow.png' %}" alt="">
+      <div class="slider">
+        {% for photo in slider_images %}
+          <img class="slider__image{% if forloop.first %} block {% endif %}" src="{{ photo.image.url }}" alt="{{ photo.name}}">
+        {% endfor %}
+      </div>
+      <img class="arrow arrow-left" src="{% static 'img/icon/arrow.png' %}" alt="">
+    </div>
+    <div class="slider-bottom">
+    </div>
+  </div>
+</section>
+<section class="main-catalog">
+  <div class="container">
+    <div class="main-catalog__container">
+      <div class="main-catalog__container_top">
+        <div class="main-catalog__title title_active">
+          <a href="">ХИТЫ ПРОДАЖ</a>
+        </div>
+        <div class="main-catalog__title">
+          <a href="">НОВИНКИ</a>
+        </div>
+        <div class="main-catalog__title">
+          <a href="">% СКИДКИ</a>
+        </div>
+      </div>
+      <div class="main-catalog__container_bottom">
+        <div class="main-catalog__subtitle">
+          <a href="">Все</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Ванны</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Душ</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Душевые углы</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Мебель для ванных комнат</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Полотенцесушители</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Санфаянс</a>
+        </div>
+        <div class="main-catalog__subtitle">
+          <a href="">Смесители</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-catalog__products">
+      <div class="main-catalog__item">
+        <div class="product">
+          <a href="">
+            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
+            <div class="product-content">
+              <h3 class="product__title">Lorem, ipsum dolor.</h3>
+              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
+            </div>
+            <div class="product_price">
+              <div class="product_price__value">10000&nbsp;</div>
+              <div class="product_price__currency">&#x20b8;</div>
+            </div>
+          </a>
+            <div class="product_btn">
+              <button class="product__buy">Купить</button>
+              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
+            </div>
+        </div>
+        <div class="product">
+          <a href="">
+            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
+            <div class="product-content">
+              <h3 class="product__title">Lorem, ipsum dolor.</h3>
+              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
+            </div>
+            <div class="product_price">
+              <div class="product_price__value">10000&nbsp;</div>
+              <div class="product_price__currency">&#x20b8;</div>
+            </div>
+          </a>
+            <div class="product_btn">
+              <button class="product__buy">Купить</button>
+              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
+            </div>
+        </div>
+        <div class="product">
+          <a href="">
+            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
+            <div class="product-content">
+              <h3 class="product__title">Lorem, ipsum dolor.</h3>
+              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
+            </div>
+            <div class="product_price">
+              <div class="product_price__value">10000&nbsp;</div>
+              <div class="product_price__currency">&#x20b8;</div>
+            </div>
+          </a>
+            <div class="product_btn">
+              <button class="product__buy">Купить</button>
+              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
+            </div>
+        </div>
+        <div class="product">
+          <a href="">
+            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
+            <div class="product-content">
+              <h3 class="product__title">Lorem, ipsum dolor.</h3>
+              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
+            </div>
+            <div class="product_price">
+              <div class="product_price__value">10000&nbsp;</div>
+              <div class="product_price__currency">&#x20b8;</div>
+            </div>
+          </a>
+            <div class="product_btn">
+              <button class="product__buy">Купить</button>
+              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
+            </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>
+{% endblock %}

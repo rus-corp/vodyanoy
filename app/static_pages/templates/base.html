@@ -1,0 +1,80 @@
+{% load static %}
+{% load head_tags %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="shortcut icon" href="{% static 'img/icon/vod_logo.ico' %}" type="image/x-icon">
+  <title>{% head_title page_title %}</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="header-logo">
+          <img src="{% static 'img/logo/vod_logo.png' %}" alt="">
+          <h1 class="logo-text">Водяной</h1>
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Производители</a></li>
+            <li><a href="#">Гарантии и возврат</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="regiter-login">
+          <a href="">Вход &nbsp;/&nbsp;</a><a href="">&nbsp;Регистрация</a>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="header-bottom__left">
+          <div class="header-bottom__left_catalog">
+            <a href="">
+              <img src="{% static 'img/header_img/burger.png' %}" alt="">
+            </a>
+            <a class="catalog-title" href="">Каталог товаров</a>
+          </div>
+          <div class="search-form">
+            <input class="search-form__text" type="text" placeholder="Поиск товаров и брендов">
+            <button class="search-form__btn"><img class="search-form__img" src="{% static 'img/header_img/search.png' %}" alt=""></button>
+          </div>
+        </div>
+        <div class="header-bottom__rigth">
+          <div class="call-phone">
+            <div class="call-phone__number">8-800-2000-22-22</div>
+            <div class="call-phone__text">Вам перезвонить?</div>
+          </div>
+          <div class="header-bottom__tools">
+            <div class="tools__item">
+              <img class="tools__img" src="{% static 'img/header_img/heart.png' %}" alt="">
+              <a href="">Избранное</a>
+            </div>
+            <div class="tools__item">
+              <img class="tools__img" src="{% static 'img/header_img/layout.png' %}" alt="">
+              <a href="">Сравнение</a>
+            </div>
+            <div class="tools__item">
+              <img class="tools__img" src="{% static 'img/header_img/basket.png' %}" alt="">
+              <a href="">Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {% block content %}
+
+  {% endblock %}
+
+  {% include 'footer.html' %}
+  <script src="{% static 'js/slider.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
