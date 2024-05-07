@@ -14,6 +14,17 @@
   justify-content: space-around;
 }
 
+.brands {
+  position: relative;
+}
+
+.brands_back_text {
+  font-size: 6rem;
+  color: #c7ccdd;
+  opacity: 0.3;
+  top: -3rem;
+  left: 10rem;
+}
 
 .brand_item {
   width: 16rem;

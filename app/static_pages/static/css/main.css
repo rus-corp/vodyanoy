@@ -2,6 +2,9 @@
 @import url(./footer.css);
 @import url(./slider.css);
 @import url(./brands_main.css);
+@import url(./about_page.css);
+@import url(./text_test.css);
+
 
 body {
   width: 100%;
@@ -21,10 +24,15 @@ body {
   line-height: 45px;
 }
 
+.back-text {
+  position: absolute;
+  font-size: 6rem;
+  color: #c7ccdd;
+  opacity: 0.3;
+  top: -3rem;
+}
 
 
-
-/* ================ SLIDER =================== */
 
 
 /* ================ MAIN CATALOG ====================== */
@@ -244,7 +252,7 @@ body {
   width: 100%;
 }
 
-.back-text {
+.news_main_back_text {
   position: absolute;
   font-size: 6rem;
   color: #c7ccdd;
@@ -262,10 +270,18 @@ body {
 }
 
 .news__item {
-  width: calc(33% - 10px);
-  margin: 1rem 1rem;
+  width: 20%;
+  margin: 2rem 1rem;
   min-width: 14rem;
-} 
+  height: 13rem;
+}
+
+.news__item img {
+  width: 10rem;
+  height: 10rem;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 .news_item__content {
   margin-left: 1rem;
@@ -402,3 +418,4 @@ body {
 .category_section_left {
   width: 20%;
 }
+

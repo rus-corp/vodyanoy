@@ -13,3 +13,5 @@ class SpecialOfferAdmin(admin.ModelAdmin):
 class BrandsAdmin(admin.ModelAdmin):
   list_display = ['id', 'name']
   list_display_links = ['id', 'name']
+
+

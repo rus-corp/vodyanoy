@@ -31,13 +31,13 @@ class Brands(models.Model):
 
 
 
-class AbotInfo(models.Model):
-  name = models.CharField(max_length=200, verbose_name='')
-  desc = models.TextField(verbose_name='')
+class AboutInfo(models.Model):
+  name = models.CharField(max_length=200, verbose_name='название пункта')
+  desc = models.TextField(verbose_name='Описание пункта')
   
   class Meta:
-    verbose_name = 'verbose_name'
-    verbose_name_plural = 'verbose_name_plural'
+    verbose_name = 'Инфо О нас'
+    verbose_name_plural = 'Инфо О нас'
   
   def __str__(self) -> str:
     return self.name

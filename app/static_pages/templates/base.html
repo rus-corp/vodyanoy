@@ -6,8 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="shortcut icon" href="{% static 'img/icon/vod_logo.ico' %}" type="image/x-icon">
   <title>{% head_title page_title %}</title>
 </head>
@@ -16,13 +16,15 @@
   <header class="header">
     <div class="container">
       <div class="header-top">
-        <div class="header-logo">
-          <img src="{% static 'img/logo/vod_logo.png' %}" alt="">
-          <h1 class="logo-text">Водяной</h1>
-        </div>
+        <a href="{% url 'static_pages:home_page' %}">
+          <div class="header-logo">
+            <img src="{% static 'img/logo/vod_logo.png' %}" alt="">
+            <h1 class="logo-text">Водяной</h1>
+          </div>
+        </a>
         <nav class="header-nav">
           <ul>
-            <li><a href="#">О нас</a></li>
+            <li><a href="{% url 'static_pages:about_page' %}">О нас</a></li>
             <li><a href="#">Производители</a></li>
             <li><a href="#">Гарантии и возврат</a></li>
             <li><a href="#">Доставка</a></li>
