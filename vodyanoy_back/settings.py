@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'app.users.apps.UsersConfig',
     'app.promo.apps.PromoConfig',
     'app.news.apps.NewsConfig',
+    'app.manufacturer.apps.ManufacturerConfig',
     
 ]
 

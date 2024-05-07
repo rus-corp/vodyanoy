@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import SpecialOffer, Brands
+from .models import SpecialOffer
 
 
 @admin.register(SpecialOffer)
@@ -9,9 +9,9 @@ class SpecialOfferAdmin(admin.ModelAdmin):
   list_display_links = ['id', 'name']
 
 
-@admin.register(Brands)
-class BrandsAdmin(admin.ModelAdmin):
-  list_display = ['id', 'name']
-  list_display_links = ['id', 'name']
+# @admin.register(Brands)
+# class BrandsAdmin(admin.ModelAdmin):
+#   list_display = ['id', 'name']
+#   list_display_links = ['id', 'name']
 
 

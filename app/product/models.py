@@ -4,6 +4,9 @@ from django.utils.text import slugify
 from transliterate import translit
 
 
+
+from app.manufacturer.models import Manufacturer
+
 from ..users.models import CustomUser
 
 class MainCategory(models.Model):
@@ -56,8 +59,10 @@ class Product(models.Model):
   price = models.IntegerField(verbose_name='Цена')
   photo = models.ImageField(verbose_name='Фото', upload_to='products_img')
   slug = models.SlugField(max_length=255, verbose_name='слаг')
-  sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT, related_name='products', verbose_name='подкатегория')
   retro_bonus = models.PositiveIntegerField(default=1, verbose_name='Ретро бонус за покупку клиенту %')
+  
+  sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT, related_name='products', verbose_name='подкатегория')
+  manufacturer = models.ForeignKey(Manufacturer, related_name='products', on_delete=models.PROTECT, verbose_name='производитель')
   
   
   class Meta:

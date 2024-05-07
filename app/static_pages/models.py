@@ -18,16 +18,16 @@ class SpecialOffer(models.Model):
 
 
 
-class Brands(models.Model):
-  name = models.CharField(max_length=200, verbose_name='Название бренда')
-  image = models.ImageField(verbose_name='Лого бренда', upload_to='', blank=True, null=True, help_text='Перед загрузкой удалить фон у фото')
+# class Brands(models.Model):
+#   name = models.CharField(max_length=200, verbose_name='Название бренда')
+#   image = models.ImageField(verbose_name='Лого бренда', upload_to='', blank=True, null=True, help_text='Перед загрузкой удалить фон у фото')
   
-  class Meta:
-    verbose_name = 'Бренд'
-    verbose_name_plural = 'Бренды'
+#   class Meta:
+#     verbose_name = 'Бренд'
+#     verbose_name_plural = 'Бренды'
   
-  def __str__(self) -> str:
-    return self.name
+#   def __str__(self) -> str:
+#     return self.name
 
 
 

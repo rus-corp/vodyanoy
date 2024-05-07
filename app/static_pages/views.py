@@ -7,7 +7,7 @@ from ..news.models import News
 from ..product.models import MainCategory, SubCategory
 # from .mixins import StaticPageMixin
 
-from .models import SpecialOffer, Brands
+from .models import SpecialOffer
 from django.views.generic.base import TemplateView
 
 
@@ -22,7 +22,7 @@ class HomePageView(TemplateView):
     context['page_title'] = 'Магазин инженерной сантехники'
     context['slider_images'] = SpecialOffer.objects.all()
     context['news_list'] = News.objects.all()[:8]
-    context['brand_list'] = Brands.objects.all()
+    # context['brand_list'] = Brands.objects.all()
     context['main_categories'] = MainCategory.objects.all()
     return context
 
