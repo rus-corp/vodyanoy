@@ -1,29 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-/* .pt-sans-regular {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-/* .roboto-mono-<uniquifier> {
-  font-family: "Roboto Mono", monospace;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* .exo-2-<uniquifier> {
+  font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 } */
+
 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   border: none;
   box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
 }
 
 a, a:visited {
   color: #4e81c2;
   text-decoration: none;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Exo 2", sans-serif;
   transition: color .2s;
 }
 
@@ -39,11 +36,11 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 p {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Exo 2", sans-serif;
 }
 
 p + p {
@@ -64,7 +61,7 @@ img, svg, video {
 
 /* Form */
 input, textarea, button, select {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Exo 2", sans-serif;
   font-size: inherit;
 }
 

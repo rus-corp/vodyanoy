@@ -12,6 +12,7 @@
   <title>{% head_title page_title %}</title>
 </head>
 <body>
+
   <header class="header">
     <div class="container">
       <div class="header-top">
@@ -35,15 +36,21 @@
       </div>
       <div class="header-bottom">
         <div class="header-bottom__left">
-          <div class="header-bottom__left_catalog">
-            <a href="">
-              <img src="{% static 'img/header_img/burger.png' %}" alt="">
+          <div class="header-bottom__left catalog_btn">
+            <a href=""><img src="{% static 'img/header_img/burger.png' %}" alt="">
+              <h2 class="catalog-title">Каталог товаров</h2>
             </a>
-            <a class="catalog-title" href="">Каталог товаров</a>
+            <div class="header_catalog_view">
+              {% for main_category in main_categories %}
+              <a class="main_category__item" href="">
+                <img src="{{main_category.photo.url}}" alt="">{{main_category.name|upper}}
+              </a>
+              {% endfor %}
+          </div>
           </div>
           <div class="search-form">
             <input class="search-form__text" type="text" placeholder="Поиск товаров и брендов">
-            <button class="search-form__btn"><img class="search-form__img" src="{% static 'img/header_img/search.png' %}" alt=""></button>
+            <button class="search-form__btn"><img class="search-form__img" src="{% static 'img/header_img/search_1.png' %}" alt=""></button>
           </div>
         </div>
         <div class="header-bottom__rigth">
@@ -57,10 +64,6 @@
               <a href="">Избранное</a>
             </div>
             <div class="tools__item">
-              <img class="tools__img" src="{% static 'img/header_img/layout.png' %}" alt="">
-              <a href="">Сравнение</a>
-            </div>
-            <div class="tools__item">
               <img class="tools__img" src="{% static 'img/header_img/basket.png' %}" alt="">
               <a href="">Корзина</a>
             </div>
@@ -69,12 +72,15 @@
       </div>
     </div>
   </header>
+
+
+
   {% block content %}
 
   {% endblock %}
 
+  
   {% include 'footer.html' %}
-  <script src="{% static 'js/slider.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
+  <script type="module" src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

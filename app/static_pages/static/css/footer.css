@@ -1,0 +1,55 @@
+.footer {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+}
+
+.footer_content {
+  display: flex;
+  margin: 2rem 0;  
+}
+
+
+
+.footer_content_left {
+  margin-top: 5.3rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-left: 7rem;
+}
+
+
+.social_media {
+  margin-top: 1rem;
+  color: #6F7682;
+}
+
+.social_media__img {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.social_media__img  a {
+  margin-left: 0.5rem;
+}
+
+.content__title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.content__item {
+  padding: 0.1rem 0;
+}
+
+.company__item {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0;
+}
+
+.company__item a {
+  margin-left: 0.5rem;
+}

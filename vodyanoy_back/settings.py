@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'app.static_pages.apps.StaticPagesConfig',
     'app.stock.apps.StockConfig',
     'app.users.apps.UsersConfig',
+    'app.promo.apps.PromoConfig',
+    'app.news.apps.NewsConfig',
     
 ]
 

@@ -1,0 +1,24 @@
+{% load static %}
+
+
+<section class="news">
+  <div class="container">
+    <div class="news_container">
+      <h2 class="section-title">Новости и события</h2>
+      <div class="back-text">News and events</div>
+    </div>
+    <div class="news_content">
+      {% for news in news_list %}
+        <div class="news__item">
+          <a href="">
+            <img src="{{news.image.url}}" alt="">
+          </a>
+          <div class="news_item__content">
+            <h4 class="news_item_title">{{news.name}}</h4>
+            <p class="news_item__desc">{{news.desc}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

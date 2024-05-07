@@ -1,5 +1,5 @@
-const arrowLeft = document.querySelector('.arrow-left');
-const arrowRight = document.querySelector('.arrow-right');
+export const arrowLeft = document.querySelector('.arrow-left');
+export const arrowRight = document.querySelector('.arrow-right');
 const slides = document.querySelectorAll('.slider__image');
 const bottom = document.querySelector('.slider-bottom');
 
@@ -18,7 +18,7 @@ function createPaginationCircle() {
 }
 
 
-function addPagination() {
+export function addPagination() {
   slides.forEach(createPaginationCircle);
   paginationCircles[0].classList.add('active')
 }
@@ -40,7 +40,7 @@ function hideSlide() {
 }
 
 
-function nextSlide() {
+export function nextSlide() {
   hideSlide();
   removeActiveClass()
   currentSlideIndex ++;
@@ -52,7 +52,7 @@ function nextSlide() {
 }
 
 
-function previousSlide() {
+export function previousSlide() {
   hideSlide();
   removeActiveClass()
   currentSlideIndex --;
@@ -63,6 +63,3 @@ function previousSlide() {
   showSlide();
 }
 
-addPagination()
-arrowRight.addEventListener('click', previousSlide)
-arrowLeft.addEventListener('click', nextSlide)

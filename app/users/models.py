@@ -22,6 +22,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
   status = models.CharField(max_length=20, choices=USER_STATUS_CHOICES, default=USER_STATUS_CHOICES[0], verbose_name='Статус клиента')
   date_joined = models.DateTimeField(auto_now_add=True, verbose_name='Дата регистрации')
   slug = models.SlugField(max_length=255, verbose_name='slug')
+  retro_bonus_balance = models.IntegerField(default=0, verbose_name='Сумма бонусов клиента')
   
   is_staff = models.BooleanField(default=False, verbose_name='Сотрудник компании')
   is_active = models.BooleanField(default=True, verbose_name='Активный пользователь')
@@ -38,11 +39,24 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
   def __str__(self) -> str:
     return self.email
   
-  def save(self, *args, **kwargs):
-    try:
-      first_name = translit(self.first_name, reversed=True)
-      last_name = translit(self.last_name, reversed=True)
-      self.slug = slugify(first_name + last_name)
-    except:
-      self.slug = slugify(self.first_name + self.last_name)
-    return super().save(*args, **kwargs)
+  # def save(self, *args, **kwargs):
+  #   try:
+  #     first_name = translit(self.first_name, reversed=True)
+  #     last_name = translit(self.last_name, reversed=True)
+  #     self.slug = slugify(first_name + last_name)
+  #   except:
+  #     self.slug = slugify(self.first_name + self.last_name)
+  #   return super().save(*args, **kwargs)
+
+
+class UserProfile(models.Model):
+  user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='user_profile', verbose_name='')
+  retro_bonus_balance = models.IntegerField(default=0, verbose_name='Сумма бонусов клиента')
+  delivery_address = models.TextField(max_length=3000, verbose_name='Адресс достаавки')
+  
+  class Meta:
+    verbose_name = 'Юзер инфо'
+    verbose_name_plural = 'Юзер инфо'
+  
+  def __str__(self) -> str:
+    return self.user.username

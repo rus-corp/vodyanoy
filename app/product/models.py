@@ -4,6 +4,8 @@ from django.utils.text import slugify
 from transliterate import translit
 
 
+from ..users.models import CustomUser
+
 class MainCategory(models.Model):
   name = models.CharField(max_length=150, verbose_name='Название', unique=True)
   slug = models.SlugField(max_length=200, verbose_name='слаг', unique=True)
@@ -49,19 +51,23 @@ class SubCategory(models.Model):
 
 
 class Product(models.Model):
-  name = models.CharField(max_length=255, verbose_name='')
-  desc = models.TextField(max_length=800, verbose_name='')
-  price = models.IntegerField(verbose_name='')
-  photo = models.ImageField(verbose_name='', upload_to='products_img')
-  slug = models.SlugField(max_length=255, verbose_name='')
-  sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT, related_name='products', verbose_name='')
+  name = models.CharField(max_length=255, verbose_name='название')
+  desc = models.TextField(max_length=800, verbose_name='Описание')
+  price = models.IntegerField(verbose_name='Цена')
+  photo = models.ImageField(verbose_name='Фото', upload_to='products_img')
+  slug = models.SlugField(max_length=255, verbose_name='слаг')
+  sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT, related_name='products', verbose_name='подкатегория')
+  retro_bonus = models.PositiveIntegerField(default=1, verbose_name='Ретро бонус за покупку клиенту %')
+  
   
   class Meta:
     verbose_name = 'Товар'
     verbose_name_plural = 'Товары'
   
+  
   def __str__(self) -> str:
     return self.name
+  
   
   def save(self, *args, **kwargs):
     try:
@@ -73,3 +79,11 @@ class Product(models.Model):
   
   def get_absolute_url(self):
     return reverse('product:product_detail', kwargs={'product_slug': self.slug})
+  
+  def give_retro_to_client(self) -> int:
+    return int(self.retro_bonus * self.price / 100)
+  
+  def apply_retro_bonus(self, user: CustomUser):
+    user.user_profile.retro_bonus_balance += self.give_retro_to_client()
+    user.user_profile.save()
+    
