@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  {% for manufacturer in object_list %}
+    {{manufacturer.name}}
+  {% endfor %}
+{% endblock %}
