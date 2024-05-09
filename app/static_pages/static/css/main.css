@@ -1,9 +1,9 @@
 @import url(./header.css);
+@import url(./manufacturer.css);
 @import url(./footer.css);
 @import url(./slider.css);
 @import url(./brands_main.css);
 @import url(./about_page.css);
-@import url(./text_test.css);
 
 
 body {

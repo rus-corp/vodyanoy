@@ -7,9 +7,11 @@ from .models import Manufacturer, ManufacturerCountry
 class ManufacturerCountryAdmin(admin.ModelAdmin):
   list_display = ['id', 'name']
   list_display_links = ['id', 'name']
+  prepopulated_fields = {'slug': ('name',),}
 
 
 @admin.register(Manufacturer)
 class ManufacturerAdmin(admin.ModelAdmin):
   list_display = ['id', 'name', 'country']
   list_display_links = ['id', 'name']
+  prepopulated_fields = {'slug': ('name',),}

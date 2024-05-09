@@ -1,0 +1,172 @@
+.manufacturer_section {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.manufacturer_back_text {
+  position: absolute;
+  margin-left: 10rem;
+}
+
+.section_title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.countries {
+  margin-top: 2rem;
+}
+
+.countries_list {
+  border: solid #d2dbde 0.1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.countries__item {
+  padding: 1rem 1rem;
+  text-align: center;
+  margin: 0.5rem;
+  width: calc(20% - 1rem);
+}
+
+.country__img {
+  width: 60px;
+  height: 40px;
+}
+
+.brands {
+  margin-top: 4rem;
+  display: flex;
+}
+.brands_filters {
+  width: 20%;
+}
+
+.price_filter {
+  border: solid #d2dbde 1px;
+  padding: 0.5rem;
+}
+
+
+.filter_title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.price_filter li {
+  margin-top: 0.5rem;
+  border-top: solid #d2dbde 1px;
+}
+
+.price_filter__label {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+  padding: 0 1rem;
+}
+
+.price_filter__checkbox {
+  display: none;
+}
+
+.price_filter__fake {
+  display: block;
+  border: solid #6F7682 1px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.price_filter__fake::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #4e81c2;
+  border-radius: 0.1rem;
+  opacity: 0;
+}
+
+.price_filter__checkbox:checked + .price_filter__fake::before {
+  opacity: 1;
+}
+
+.price_filter__text {
+  margin-left: 1rem;
+  color: #6F7682;
+}
+
+.country_filter {
+  margin-top: 1rem;
+  width: 100%;
+  border: solid #d2dbde 1px;
+  padding: 0.5rem;
+}
+
+.country_filter li {
+  margin-top: 0.5rem;
+  border-top: solid #d2dbde 1px;
+}
+
+.brands_list {
+  width: 80%;
+}
+
+.partners__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.partners__item {
+  width: 10rem;
+  height: 9rem;
+  padding: 1rem 1rem;
+  border: solid #d2dbde 1px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.partners__item__img img {
+  margin-top: 1rem;
+  width: 100%;
+  height: 50%;
+  block-size: auto;
+}
+
+.partners__item__bottom {
+  text-align: center;
+  margin-top: auto;
+}
+
+.partners__item__name {
+  color: #3c46a7;
+  font-size: 1rem;
+}
+
+.partners__item__country {
+  display: flex;
+  margin-top: 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners__item__country_flag {
+  width: 2rem;
+  height: 1rem;
+}
+
+.partners__item__country_name {
+  font-size: 0.9rem;
+  margin-left: 0.2rem;
+}

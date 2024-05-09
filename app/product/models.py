@@ -1,10 +1,9 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.text import slugify
-from transliterate import translit
 
 
 
+from ..users.utils import create_slug
 from app.manufacturer.models import Manufacturer
 
 from ..users.models import CustomUser
@@ -22,11 +21,7 @@ class MainCategory(models.Model):
     return self.name
   
   def save(self, *args, **kwargs):
-    try:
-      name = translit(self.name, reversed=True)
-      self.slug = slugify(name)
-    except:
-      self.slug = slugify(self.name)
+    self.slug = create_slug(self.name)
     return super().save(*args, **kwargs)
 
 
@@ -45,11 +40,7 @@ class SubCategory(models.Model):
     return self.name
   
   def save(self, *args, **kwargs):
-    try:
-      name = translit(self.name, reversed=True)
-      self.slug = slugify(name)
-    except:
-      self.slug = slugify(self.name)
+    self.slug = create_slug(self.name)
     return super().save(*args, **kwargs)
 
 
@@ -75,11 +66,7 @@ class Product(models.Model):
   
   
   def save(self, *args, **kwargs):
-    try:
-      name = translit(self.name, reversed=True)
-      self.slug = slugify(name)
-    except:
-      self.slug = slugify(self.name)
+    self.slug = create_slug(self.name)
     return super().save(*args, **kwargs)
   
   def get_absolute_url(self):
