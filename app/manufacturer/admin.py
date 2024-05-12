@@ -12,6 +12,6 @@ class ManufacturerCountryAdmin(admin.ModelAdmin):
 
 @admin.register(Manufacturer)
 class ManufacturerAdmin(admin.ModelAdmin):
-  list_display = ['id', 'name', 'country']
+  list_display = ['id', 'name', 'price_segment','country']
   list_display_links = ['id', 'name']
   prepopulated_fields = {'slug': ('name',),}

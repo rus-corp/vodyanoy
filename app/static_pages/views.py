@@ -36,3 +36,11 @@ class AboutPageView(TemplateView):
     context['sub_categories'] = SubCategory.objects.all()
     return context
 
+
+class DeliveryPageView(TemplateView):
+  template_name = 'static_page/delivery_page.html'
+  
+  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    context = super().get_context_data(**kwargs)
+    context['page_title'] = 'Бесплатная Доставка в компании '
+    return context

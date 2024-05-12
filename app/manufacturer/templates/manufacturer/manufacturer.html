@@ -1,99 +1,97 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load head_tags %}
+{% load filter_tags %}
 
 {% block content %}
-
-<section class="manufacturer_section">
-  <div class="container">
-    <div class="section_header">
-      <h2 class="section_title">Производители</h2>
-      <div class="back-text manufacturer_back_text">Brands</div>
-    </div>
-
-    <section class="countries">
-      <div class="countries_list">
-        {% for country in countries %}
-          <div class="countries__item">
-            <img class="country__img" src="{{ country.image.url }}" alt="{{ country.name }}">
-            <h4 class="country__name">{{ country.name }}</h4>
-          </div>
-        {% endfor %}
+  <section class="page_section manufacturer">
+    <div class="container">
+      <div class="section_header">
+        <h2 class="section_title">Производители</h2>
+        <div class="back-text manufacturer_back_text">Brands</div>
       </div>
-    </section>
 
-    <section class="brands">
-      <aside class="brands_filters">
-        <div class="price_filter">
-          <ul><h4 class="filter_title">Ценовая группа</h4>
-            <form class="price_segment_form" method="get">
-              <li>
-                <label class="price_filter__label">
-                  <input type="checkbox" name="price_segment" value="econom" class="price_filter__checkbox">
-                  <span class="price_filter__fake"></span>
-                  <span class="price_filter__text">Эконом</span>
-                </label>
-              </li>
-              <li>
-                <label class="price_filter__label">
-                  <input type="checkbox" name="price_segment" value="middle" class="price_filter__checkbox">
-                  <span class="price_filter__fake"></span>
-                  <span class="price_filter__text">Средний</span>
-                </label>
-              </li>
-              <li>
-                <label class="price_filter__label">
-                  <input type="checkbox" name="price_segment" value="premium" class="price_filter__checkbox">
-                  <span class="price_filter__fake"></span>
-                  <span class="price_filter__text">Премиум</span>
-                </label>
-              </li>
-            </form>
-          </ul>
+      <section class="countries">
+        <div class="countries_list">
+          {% for country in countries %}
+            <div class="countries__item">
+              <img class="country__img" src="{{ country.image.url }}" alt="{{ country.name }}">
+              <h4 class="country__name">{{ country.name }}</h4>
+            </div>
+          {% endfor %}
         </div>
-        <div class="country_filter">
-          <ul><h4 class="filter_title">Страна</h4>
-            <li>
-              <label class="price_filter__label">
-                <input type="checkbox" class="price_filter__checkbox">
-                <span class="price_filter__fake"></span>
-                <span class="price_filter__text">Бельгия</span>
-              </label>
-            </li>
-            <li>
-              <label class="price_filter__label">
-                <input type="checkbox" class="price_filter__checkbox">
-                <span class="price_filter__fake"></span>
-                <span class="price_filter__text">Великобритания</span>
-              </label>
-            </li>
-            <li>
-              <label class="price_filter__label">
-                <input type="checkbox" class="price_filter__checkbox">
-                <span class="price_filter__fake"></span>
-                <span class="price_filter__text">Германия</span>
-              </label>
-            </li>
-            <li>
-              <label class="price_filter__label">
-                <input type="checkbox" class="price_filter__checkbox">
-                <span class="price_filter__fake"></span>
-                <span class="price_filter__text">Европа</span>
-              </label>
-            </li>
-            <li>
-              <label class="price_filter__label">
-                <input type="checkbox" class="price_filter__checkbox">
-                <span class="price_filter__fake"></span>
-                <span class="price_filter__text">Испания</span>
-              </label>
-            </li>
-          </ul>
-        </div>
-      </aside>
-      
-    </section>
-  </div>
-</section>
+      </section>
 
+      <section class="brands">
+        <aside class="brands_filters">
+          <div class="price_filter">
+            <ul><h4 class="filter_title">Ценовая группа</h4>
+              {% filter_tag as prices %}
+              <form class="filter_form" method="get">
+                <li>
+                  <label class="price_filter__label">
+                    <input class="price_filter__checkbox" type="checkbox" name="price_segment" value="econom" {% if 'econom' in prices %}checked{% endif %}>
+                    <span class="price_filter__fake"></span>
+                    <span class="price_filter__text">Эконом</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="price_filter__label">
+                    <input class="price_filter__checkbox" type="checkbox" name="price_segment" value="middle" {% if 'middle' in prices %}checked{% endif %}>
+                    <span class="price_filter__fake"></span>
+                    <span class="price_filter__text">Средний</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="price_filter__label">
+                    <input class="price_filter__checkbox" type="checkbox" name="price_segment" value="premium" {% if 'premium' in prices %}checked{% endif %}>
+                    <span class="price_filter__fake"></span>
+                    <span class="price_filter__text">Премиум</span>
+                  </label>
+                </li>
+              </form>
+            </ul>
+          </div>
+          <div class="country_filter">
+            <ul><h4 class="filter_title">Страна</h4>
+              <form class="country_filter_form" method="get">
+                {% country_filter as countries_filter %}
+                {% for country in countries %}
+                  <li>
+                    <label class="price_filter__label">
+                      <input type="checkbox" class="price_filter__checkbox" name="country" value="{{ country.name }}" {% if country.name in countries_filter %}checked{% endif %}>
+                      <span class="price_filter__fake"></span>
+                      <span class="price_filter__text">{{ country.name }}</span>
+                    </label>
+                  </li>
+                {% endfor %}
+              </form>
+            </ul>
+          </div>
+        </aside>
+        <aside class="brands_list">
+          <div class="partners__list">
+            {% for manufactur in  manufacturers %}
+              <div class="partners__item">
+                  <img class="partners__item__img" src="{{ manufactur.image.url }}" alt="{{ manufactur.name }}">
+                <div class="partners__item__bottom">
+                  <div class="partners__item__name">{{ manufactur.name }}</div>
+                  <div class="partners__item__country">
+                    <div class="partners__item__country_flag">
+                      <img src="{{ manufactur.country.image.url }}" alt="">
+                    </div>
+                    <div class="partners__item__country_name">{{ manufactur.country.name }}</div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </aside>
+        
+      </section>
+    </div>
+  </section>
+
+
+  <script src="{% static 'js/form_submit.js' %}"></script>
 {% endblock %}

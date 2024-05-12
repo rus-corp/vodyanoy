@@ -1,10 +1,4 @@
-.manufacturer_section {
-  margin-top: 2rem;
-  position: relative;
-}
-
 .manufacturer_back_text {
-  position: absolute;
   margin-left: 10rem;
 }
 
@@ -66,7 +60,9 @@
   align-items: center;
   margin-top: 0.2rem;
   padding: 0 1rem;
+  position: relative;
 }
+
 
 .price_filter__checkbox {
   display: none;
@@ -85,7 +81,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%;  
   transform: translate(-50%, -50%);
   display: block;
   width: 0.5rem;
@@ -137,11 +133,9 @@
   flex-direction: column;
 }
 
-.partners__item__img img {
-  margin-top: 1rem;
-  width: 100%;
-  height: 50%;
-  block-size: auto;
+.partners__item__img {
+  width: 8rem;
+  height: 3rem;
 }
 
 .partners__item__bottom {

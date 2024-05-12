@@ -3,7 +3,7 @@ from django.urls import path, include
 
 
 
-app_name = 'product'
+# app_name = 'product'
 
-urlpatterns = [
-]
+# urlpatterns = [
+# ]

@@ -4,6 +4,7 @@
 @import url(./slider.css);
 @import url(./brands_main.css);
 @import url(./about_page.css);
+@import url(./delivery_page.css);
 
 
 body {
@@ -30,6 +31,11 @@ body {
   color: #c7ccdd;
   opacity: 0.3;
   top: -3rem;
+}
+
+.page_section {
+  margin-top: 2rem;
+  position: relative;
 }
 
 
