@@ -10,8 +10,8 @@ class SpecialOffer(models.Model):
   image = models.ImageField(verbose_name='Фото', upload_to='special_offers/%Y/m', help_text='Максимальное разрешение изображения 2400х600px')
   
   class Meta:
-    verbose_name = 'Спец.предложение на главной странице'
-    verbose_name_plural = 'Спец.предложения на главной странице'
+    verbose_name = 'Слайдер на главной странице'
+    verbose_name_plural = 'Слайдер на главной странице'
 
   def __str__(self) -> str:
     return self.name
