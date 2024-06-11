@@ -1,0 +1,64 @@
+{% load static %}
+
+
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="{% url 'static_pages:home_page' %}">
+        <div class="header-logo">
+          <img src="{% static 'img/logo/vod_logo.png' %}" alt="">
+          <h1 class="logo-text">Водяной</h1>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="{% url 'static_pages:about_page' %}">О нас</a></li>
+          <li><a href="{% url 'manufacturer_app:manufacturer' %}">Производители</a></li>
+          <li><a href="#">Гарантии и возврат</a></li>
+          <li><a href="{% url 'static_pages:delivery' %}">Доставка</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="regiter-login">
+        <a href="">Вход &nbsp;/&nbsp;</a><a href="">&nbsp;Регистрация</a>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="header-bottom__left">
+        <div class="header-bottom__left catalog_btn">
+          <a href=""><img src="{% static 'img/header_img/burger.png' %}" alt="">
+            <h2 class="catalog-title">Каталог товаров</h2>
+          </a>
+          <div class="header_catalog_view">
+            {% for main_category in main_categories %}
+            <a class="main_category__item" href="">
+              <img src="{{main_category.photo.url}}" alt="">{{main_category.name|upper}}
+            </a>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="search-form">
+          <input class="search-form__text" type="text" placeholder="Поиск товаров и брендов">
+          <button class="search-form__btn"><img class="search-form__img" src="{% static 'img/header_img/search_1.png' %}" alt=""></button>
+        </div>
+      </div>
+      <div class="header-bottom__rigth">
+        <div class="call-phone">
+          <div class="call-phone__number">8-800-2000-22-22</div>
+          <div class="call-phone__text">Вам перезвонить?</div>
+        </div>
+        <div class="header-bottom__tools">
+          <div class="tools__item">
+            <img class="tools__img" src="{% static 'img/header_img/heart.png' %}" alt="">
+            <a href="">Избранное</a>
+          </div>
+          <div class="tools__item">
+            <img class="tools__img" src="{% static 'img/header_img/basket.png' %}" alt="">
+            <a href="">Корзина</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
