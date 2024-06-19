@@ -1,46 +1,28 @@
 name;main_category;image
-Металлические трубы;1;
-Пластиковые трубы;1;
-Соединительные элементы (фитинги);1;
-Запорная арматура;1;
-Материалы для монтажа труб;1;
-Краны;2;
-Вентили;2;
-Задвижки;2;
-Клапаны;2;
-Приводы для запорной арматуры;2;
-Раковины;3;
-Унитазы;3;
-Ванны;3;
-Душевые кабины;3;
-Смесители;3;
-Котлы;4;
-Радиаторы;4;
-Теплоносители;4;
-Регуляторы температуры;4;
-Системы управления отоплением;4;
-Трубы;5;
-Фитинги;5;
-Сифоны;5;
-Канализационные насосы;5;
-Очистные сооружения;5;
-Фильтры;6;
-Насосы;6;
-Счётчики воды;6;
-Системы очистки;6;
-Комплектующие для систем водоснабжения;6;
-Материалы для труб;7;
-Материалы для котлов и радиаторов;7;
-Монтажная пена;7;
-Герметики;7;
-Крепежные элементы;7;
-Ключи;8;
-Отвёртки;8;
-Измерительные приборы;8;
-Защитные очки и перчатки;8;
-Съёмники и приспособления для монтажа;8;
-Кондиционеры;9;
-Вентиляция;9;
-Увлажнители воздуха;9;
-Очистители воздуха;9;
-Системы управления климатом;9;
+Металлические трубы;14;category_img/sub_category_img/metal_trub.jpg
+Пластиковые трубы;14;category_img/sub_category_img/plastic_trub.jpg
+Краны;15;category_img/sub_category_img/kran.jpg
+Вентили;15;category_img/sub_category_img/ventil.jpg
+Раковины;16;category_img/sub_category_img/rakovina.jpg
+Унитазы;16;category_img/sub_category_img/unitaz.jpg
+Ванны;16;category_img/sub_category_img/vanni.jpg
+Душевые кабины;16;category_img/sub_category_img/dush_cab.jpg
+Смесители;16;category_img/sub_category_img/smes.jpg
+Котлы;17;category_img/sub_category_img/kotel.jpg
+Радиаторы;17;category_img/sub_category_img/rad.jpg
+Регуляторы температуры;17;category_img/sub_category_img/regulator.jpg
+Фитинги;18;category_img/sub_category_img/fitig.jpg
+Сифоны;18;category_img/sub_category_img/sifon.jpg
+Канализационные насосы;18;category_img/sub_category_img/kanal_nas.jpg
+Фильтры;19;category_img/sub_category_img/filters.jpeg
+Насосы;19;category_img/sub_category_img/nasosi.jpeg
+Счётчики воды;19;category_img/sub_category_img/scetik.jpeg
+Системы очистки;19;category_img/sub_category_img/filter_system.jpeg
+Шуроповерты;21;category_img/sub_category_img/shurik.jpeg
+Дрели;21;category_img/sub_category_img/drel.jpeg
+Газонокосилки;21;category_img/sub_category_img/gazon.jpeg
+Пилы;21;category_img/sub_category_img/pila.png
+Кондиционеры;22;category_img/sub_category_img/konder.jpeg
+Мобильные кондиционеры;22;category_img/sub_category_img/mobil_conder.jpeg
+Увлажнители воздуха;22;category_img/sub_category_img/uvlazh.jpeg
+Очистители воздуха;22;category_img/sub_category_img/ochistit.jpeg

@@ -17,7 +17,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.static_pages.urls', namespace='static_pages')),
     path('users/', include('app.users.urls', namespace='users_app')),
-    path('manufacturer/', include('app.manufacturer.urls', namespace='manufacturer_app'))
+    path('manufacturer/', include('app.manufacturer.urls', namespace='manufacturer_app')),
+    
+    path('catalog/', include('app.product.urls', namespace='catalog'))
 ]
 
 

@@ -1,9 +1,10 @@
 from django.urls import path, include
 
 
+from .views import MainCategoryView
 
+app_name = 'product'
 
-# app_name = 'product'
-
-# urlpatterns = [
-# ]
+urlpatterns = [
+  path('category/', MainCategoryView.as_view(), name='category'),
+]
