@@ -1,4 +1,6 @@
 {% load static %}
+{% load product_tags %}
+{% get_main_caegories as main_categories %}
 
 
 <header class="header">
@@ -27,7 +29,7 @@
     <div class="header-bottom">
       <div class="header-bottom__left">
         <div class="header-bottom__left catalog_btn">
-          <a href="{% url 'product:category' %}"><img src="{% static 'img/header_img/burger.png' %}" alt="">
+          <a href="{% url 'product:main_category' %}"><img src="{% static 'img/header_img/burger.png' %}" alt="">
             <h2 class="catalog-title">Каталог товаров</h2>
           </a>
           <div class="header_catalog_view">

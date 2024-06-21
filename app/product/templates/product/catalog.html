@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load product_tags %}
 
 {% block content %}
 
@@ -9,65 +8,27 @@
   <div class="container category_container">
     <aside class="main_category">
       <div class="main_category_list">
-        {% main_category_aside %}
+        <ul>
+          {% for main_category in categories %}
+          <li><a href="{{ main_category.get_absolute_url }}">{{main_category.name}}</a></li>
+          {% endfor %}
+        </ul>
       </div>
     </aside>
 
 
     <aside class="subcategory">
       <div class="subcategory_list">
+        {% for main_category in categories %}
         <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/armat.jpg" alt="">
-            <h3>ОТОПЛЕНИЕ</h3>
+          <a href="{{ main_category.get_absolute_url }}">
+            <img src="{{main_category.photo.url}}" alt="">
+            <h3>{{main_category.name}}</h3>
           </a>
         </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/climat.jpg" alt="">
-            <h3>КЛИМАТ</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/filter.png" alt="">
-            <h3>ИНСТРУМЕНТ</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/instrum.jpeg" alt="">
-            <h3>САНТЕХНИКА</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/radiator.jpg" alt="">
-            <h3>ФИЛЬТРА ДЛЯ ВОДЫ</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/santech.png" alt="">
-            <h3>ЗАПЧАСТИ</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/santech.png" alt="">
-            <h3>ЗАПЧАСТИ</h3>
-          </a>
-        </div>
-        <div class="subcategory__item">
-          <a href="">
-            <img src="./img/category/santech.png" alt="">
-            <h3>ЗАПЧАСТИ</h3>
-          </a>
-        </div>
+        {% endfor %}
       </div>
     </aside>
   </section>
-
-
 
 {% endblock %}

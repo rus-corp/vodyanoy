@@ -8,6 +8,9 @@ from app.manufacturer.models import Manufacturer
 
 from ..users.models import CustomUser
 
+
+
+
 class MainCategory(models.Model):
   name = models.CharField(max_length=150, verbose_name='Название', unique=True)
   slug = models.SlugField(max_length=200, verbose_name='слаг', unique=True)
@@ -19,6 +22,9 @@ class MainCategory(models.Model):
   
   def __str__(self) -> str:
     return self.name
+  
+  def get_absolute_url(self):
+    return reverse('product:main_sub_category', kwargs={'slug': self.slug})
   
   def save(self, *args, **kwargs):
     self.slug = create_slug(self.name)

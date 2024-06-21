@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% for sub_category in sub_categories %}
+    <p>{{sub_category.name}}</p>
+  {% endfor %}
+
+{% endblock %}

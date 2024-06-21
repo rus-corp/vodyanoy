@@ -9,6 +9,12 @@ register = template.Library()
 
 
 
+@register.simple_tag()
+def get_main_caegories():
+  main_categories = MainCategory.objects.all()
+  return main_categories
+
+
 
 @register.inclusion_tag('product/main_category.html')
 def main_category_aside():
