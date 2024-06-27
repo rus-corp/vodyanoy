@@ -7,7 +7,7 @@ from django.db import models
 
 class SpecialOffer(models.Model):
   name = models.CharField(max_length=150, verbose_name='Название')
-  image = models.ImageField(verbose_name='Фото', upload_to='special_offers/%Y/m', help_text='Максимальное разрешение изображения 2400х600px')
+  image = models.ImageField(verbose_name='Фото', upload_to='special_offers/%Y/%m', help_text='Максимальное разрешение изображения 2400х600px')
   
   class Meta:
     verbose_name = 'Слайдер на главной странице'

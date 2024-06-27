@@ -22,3 +22,8 @@ class SubCategoryView(generic.ListView):
     main_category = get_object_or_404(MainCategory, slug=self.kwargs['slug'])
     queryset = main_category.sub_categories .all()
     return queryset
+
+
+# class ProductListView(generic.ListView):
+#   template_name = ''
+  
