@@ -7,15 +7,18 @@ from .models import MainCategory, SubCategory, Product
 class MainCategoryAdmin(admin.ModelAdmin):
   list_display = ['id', 'name']
   prepopulated_fields = {'slug': ('name',),}
+  list_display_links = ['id', 'name']
 
 
 @admin.register(SubCategory)
 class SubCategoryadmin(admin.ModelAdmin):
   list_display = ['id', 'name', 'main_category']
   prepopulated_fields = {'slug': ('name',),}
+  list_display_links = ['id', 'name']
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
   list_display = ['id', 'name', 'price', 'sub_category']
   prepopulated_fields = {'slug': ('name',),}
+  list_display_links = ['id', 'name',]

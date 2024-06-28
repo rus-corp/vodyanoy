@@ -11,14 +11,14 @@
           <img src="./img/products/unnamed.jpg" alt="">
         </div>
         <div class="product_small_img">
-          <img class="product_small_img__item" src="./img/products/vanna2.jpg" alt="">
+          <img class="product_small_img__item" src="{{product.photo.url}}" alt="">
           <img src="" alt="">
           <img src="" alt="">
         </div>
       </div>
       <div class="product-item__desc">
         <div class="product-item__desc__title">
-          <h2>Ванна акриловая прямоугольная Акватек Мия 140*70см без гидромассажа</h2>
+          <h2>{{product.name}}</h2>
         </div>
         <div class="product-item__desc__text">
           <div class="product-item__desc__params">
@@ -33,7 +33,7 @@
           </div>
           <div class="product-item__desc__rigth">
             <div class="product-item__desc__price">
-              <div class="product-item_price__value">10000&nbsp;</div>
+              <div class="product-item_price__value">{{product.price}}&nbsp;</div>
               <div class="product-item_price__currency">&#x20b8;</div>
             </div>
             <div class="product-item__desc__btns">
@@ -73,16 +73,7 @@
     </section>
     <section class="product_info__item">
       <div class="info_item about_item">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam consequuntur, quas modi voluptates sapiente dolores accusantium vero pariatur repellat laudantium magni rem, rerum eligendi, nisi quia architecto dolor iste vel!
-        Saepe similique magnam commodi tempora rerum pariatur culpa at nesciunt aperiam nemo? Ullam distinctio quis itaque, inventore voluptas vel reprehenderit laborum, ad autem, mollitia provident assumenda perspiciatis. Mollitia, impedit perferendis.
-        Sunt velit quo delectus natus explicabo quis, fuga ducimus nam labore eveniet quisquam repellendus harum animi. Labore dolores omnis, sunt cupiditate esse, fugiat cumque, ab nostrum quas deserunt veniam earum?
-        Numquam natus autem architecto repudiandae deserunt nesciunt officiis ipsum rem. Nobis aliquam optio deleniti commodi repudiandae natus nostrum quas? Adipisci nesciunt atque maiores inventore molestiae quia dignissimos cupiditate error exercitationem!
-        Cupiditate molestiae a minus rerum inventore natus quas nam illo id, deserunt quod ullam debitis voluptates facere reprehenderit recusandae ex tempore cum veniam, non nesciunt tenetur saepe facilis? Ea, harum.
-        Nihil iure quaerat eaque voluptas dolor, placeat facere! Ullam eligendi ratione suscipit reiciendis ducimus inventore cum esse. Nobis quaerat esse corporis fugiat laborum molestiae sapiente facilis, illo libero amet similique!
-        Iusto animi a mollitia tempore laboriosam minima sit vero eveniet voluptatem, possimus expedita voluptatibus inventore eligendi provident facilis corrupti! Praesentium alias at ipsum quaerat aliquam maiores animi saepe? Error, eius?
-        Reprehenderit praesentium fuga accusamus voluptates commodi adipisci eaque non beatae ullam, est minus possimus veritatis eos voluptatum molestiae nam tempore pariatur quod. Perspiciatis, perferendis temporibus? Nobis animi assumenda facere nostrum.
-        Architecto aliquam rem dicta earum quo nostrum perspiciatis voluptate tempora officiis quaerat, ea vitae animi saepe rerum dolor odio molestias incidunt dolorum autem aliquid illum ex corrupti. Perferendis, sequi hic.
-        Tenetur sapiente nesciunt suscipit ipsam libero quas accusantium? Quod eius id aliquid, aspernatur fugit minus! Quo architecto labore minima beatae earum, ducimus ad fugit, ut, aliquid suscipit nostrum laboriosam atque.</p>
+        <p>{{product.desc}}</p>
       </div>
       <div class="info_item haracters_item active_item">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsam eligendi rerum, neque, dicta dolores labore aut ea ut necessitatibus mollitia commodi corporis hic consequatur repellendus quo nobis explicabo omnis?

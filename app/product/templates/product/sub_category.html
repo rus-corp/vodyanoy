@@ -1,9 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load product_tags %}
 
 {% block content %}
-  {% for sub_category in sub_categories %}
-    <p>{{sub_category.name}}</p>
-  {% endfor %}
+
+<section class="category">
+  <div class="container category_container">
+    <div class="category_section_left">
+      <aside class="main_category">
+        <div class="main_category_list">
+          <ul>
+            {% main_category_aside %}
+          </ul>
+        </div>
+      </aside>
+
+      <aside class="subcategory_section">
+        <div class="main_category_list">
+          <ul>
+            {% for sub_category in sub_categories_list %}
+            <li><a href="{{sub_category.get_absolute_url}}">{{sub_category.name}}</a></li>
+            {% endfor %}
+            
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <aside class="subcategory_list">
+      {% for sub_category in sub_categories_list %}
+      <div class="subcategory__item">
+        <a href="{{sub_category.get_absolute_url}}">
+          <img src="{{sub_category.photo.url}}" alt="{{sub_category.name}}<">
+          <h4>{{sub_category.name}}</h4>
+        </a>
+      </div>
+      {% endfor %}
+    </aside>
+  </div>
+</section>
 
 {% endblock %}

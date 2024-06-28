@@ -18,12 +18,14 @@ class Command(BaseCommand):
   def handle(self, *args: Any, **options: Any):
     with open(file_path, encoding='utf-8') as file:
       data = list(csv.DictReader(file, delimiter=';'))
+    products = Product.objects.all()
+    products.delete()
     for prod in data:
       photo = random.choice(photos)
       photo_url = 'products_img/' + photo
       sub_categ = SubCategory.objects.get(pk=random.randint(1, 27))
       man = Manufacturer.objects.get(pk=random.randint(1 ,3))
       p = Product(name=prod['name'], desc=prod['desc'], price=prod['price'],
-                  photo=prod['photo'], sub_category=sub_categ, manufacturer=man)
+                  photo=photo_url, sub_category=sub_categ, manufacturer=man)
       p.save()
     

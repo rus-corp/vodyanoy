@@ -53,7 +53,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .subcategory__item {
@@ -75,4 +75,24 @@
   height: 100%;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
+}
+
+.subcategory_section {
+  background-color: white;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+}
+
+
+
+.products_list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.category_section_left {
+  width: 20%;
 }

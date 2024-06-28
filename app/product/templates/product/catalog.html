@@ -9,7 +9,7 @@
     <aside class="main_category">
       <div class="main_category_list">
         <ul>
-          {% for main_category in categories %}
+          {% for main_category in main_categories %}
           <li><a href="{{ main_category.get_absolute_url }}">{{main_category.name}}</a></li>
           {% endfor %}
         </ul>
@@ -19,10 +19,10 @@
 
     <aside class="subcategory">
       <div class="subcategory_list">
-        {% for main_category in categories %}
+        {% for main_category in main_categories %}
         <div class="subcategory__item">
           <a href="{{ main_category.get_absolute_url }}">
-            <img src="{{main_category.photo.url}}" alt="">
+            <img src="{{main_category.photo.url}}" alt="{{main_category.name}}">
             <h3>{{main_category.name}}</h3>
           </a>
         </div>

@@ -51,6 +51,22 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'vodyanoy_back.urls'
 
+
+LOGGING = {
+    "version": 1,
+    "handlers": {
+        'console' : {'class': 'logging.StreamHandler' }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        }
+    }
+}
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

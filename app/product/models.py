@@ -45,6 +45,9 @@ class SubCategory(models.Model):
   def __str__(self) -> str:
     return self.name
   
+  def get_absolute_url(self):
+    return reverse('product:products_list', kwargs={'slug': self.slug})
+  
   def save(self, *args, **kwargs):
     self.slug = create_slug(self.name)
     return super().save(*args, **kwargs)
