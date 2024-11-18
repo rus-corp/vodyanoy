@@ -3,9 +3,58 @@
 
 
 {% block content %}
-{% for product in product_list %}
-  <p>{{product.name}}</p>
-{% endfor %}
+{% load product_tags %}
+{% get_main_categories as main_categories_aside %}
+<section class="category">
+  <div class="container category_container">
+    <div class="category_section_left">
+      <aside class="main_category">
+        <div class="main_category_list">
+          <ul>
+            {% for main_category in main_categories_aside %}
+              <li><a href="{{main_category.get_absolute_url}}">{{main_category.name}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+
+      <aside class="subcategory_section">
+        <div class="main_category_list">
+          <ul>
+            {% for sub_category in sub_categories %}
+            <li><a href="{{sub_category.get_absolute_url}}">{{ sub_category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+
+    
+    <aside class="catalog_products_list">
+      {% for product in product_list %}
+        <div class="catalog_product">
+          <a href="{{product.get_absolute_url}}">
+            <img class="product__img" src="{{product.photo.url}}" alt="{{product.name}}">
+            <div class="product-content">
+              <h3 class="product__title">{{ product.name }}</h3>
+              <p class="product__desc">{{ product.desc }}</p>
+            </div>
+            <div class="product_price">
+              <div class="product_price__value">{{ product.price }}&nbsp;</div>
+              <div class="product_price__currency">&#x20b8;</div>
+            </div>
+          </a>
+            <div class="product_btn">
+              <button class="product__buy">Купить</button>
+              <img class="add-to-favorite" src="{% static 'img/icon/heart.png' %}" alt="">
+            </div>
+        </div>
+      {% endfor %}
+    </aside>
+    
+  </div>
+</section>
 
 
 {% endblock %}

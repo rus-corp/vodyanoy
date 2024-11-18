@@ -60,10 +60,10 @@ class Product(models.Model):
   photo = models.ImageField(verbose_name='Фото', upload_to='products_img')
   slug = models.SlugField(max_length=255, verbose_name='слаг')
   retro_bonus = models.PositiveIntegerField(default=1, verbose_name='Ретро бонус за покупку клиенту %')
-  
+
   sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT, related_name='products', verbose_name='подкатегория')
   manufacturer = models.ForeignKey(Manufacturer, related_name='products', on_delete=models.PROTECT, verbose_name='производитель')
-  
+  parametr = models.ManyToManyField('ProductParametr', related_name='product')
   
   class Meta:
     verbose_name = 'Товар'
@@ -79,7 +79,7 @@ class Product(models.Model):
     return super().save(*args, **kwargs)
   
   def get_absolute_url(self):
-    return reverse('product:product_detail', kwargs={'product_slug': self.slug})
+    return reverse('product:product_detail', kwargs={'slug': self.slug})
   
   def give_retro_to_client(self) -> int:
     return int(self.retro_bonus * self.price / 100)
@@ -87,4 +87,33 @@ class Product(models.Model):
   def apply_retro_bonus(self, user: CustomUser):
     user.user_profile.retro_bonus_balance += self.give_retro_to_client()
     user.user_profile.save()
+
+
+
+class ProductParametr(models.Model):
+  hit = models.BooleanField(default=False, verbose_name='Статус ХИТа продаж')
+  new = models.BooleanField(default=False, verbose_name='Статус новинки')
+  discount = models.IntegerField(default=0, blank=True, null=True, verbose_name='Скидка на товар')
+  power= models.IntegerField(verbose_name='Мощность', blank=True, null=True)
+  
+  class Meta:
+    verbose_name = 'Параметры товара'
+    verbose_name_plural = 'Параметры товаров'
     
+  def __str__(self) -> str:
+    return f'{self.hit}/{self.new}/{self.discount}/{self.power}'
+
+
+
+class ProductPhoto(models.Model):
+  product = models.ForeignKey(Product, related_name='product_photos', verbose_name='Фотографии товара', on_delete=models.CASCADE)
+  title = models.CharField(max_length=20, verbose_name='Название фото')
+  photo = models.ImageField(verbose_name='Фото', upload_to='products_img/more')
+  
+  class Meta:
+    verbose_name = 'verbose_name'
+    verbose_name_plural = 'verbose_name_plural'
+  
+  
+  def __str__(self):
+    return self.title

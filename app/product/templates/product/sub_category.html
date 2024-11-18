@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load product_tags %}
+
+
+
+
 
 {% block content %}
+{% load product_tags %}
+{% get_main_categories as main_categories_aside %}
 
 <section class="category">
   <div class="container category_container">
@@ -10,7 +15,9 @@
       <aside class="main_category">
         <div class="main_category_list">
           <ul>
-            {% main_category_aside %}
+            {% for main_category in main_categories_aside %}
+              <li><a href="{{main_category.get_absolute_url}}">{{main_category.name}}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </aside>

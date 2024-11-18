@@ -13,8 +13,8 @@
 .main_category {
   margin-top: 1.3rem;
   padding: 1rem 1rem;
-  width: 17rem;
   background-color: white;
+  border-radius: .5rem;
 }
 
 .main_category_list li {
@@ -81,18 +81,27 @@
   background-color: white;
   padding: 1rem 1rem;
   margin-top: 1rem;
+  border-radius: .5rem;
 }
 
 
 
-.products_list {
+.catalog_products_list {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 2rem;
 }
 
 .category_section_left {
   width: 20%;
+}
+
+.catalog_product {
+  width: 18rem;
+  margin-bottom: 2rem;
+  border: solid #dfe1ea .5px;
+  padding: .5rem;
+  height: 30rem;
 }

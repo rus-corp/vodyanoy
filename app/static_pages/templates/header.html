@@ -34,7 +34,7 @@
           </a>
           <div class="header_catalog_view">
             {% for main_category in main_categories %}
-            <a class="main_category__item" href="">
+            <a class="main_category__item" href={{main_category.get_absolute_url}}>
               <img src="{{main_category.photo.url}}" alt="">{{main_category.name|upper}}
             </a>
             {% endfor %}
