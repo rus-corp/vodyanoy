@@ -3,6 +3,7 @@ import { arrowLeft, arrowRight, addPagination, nextSlide, previousSlide } from '
 import { headerCatalog, headerCategory, addBlock, removeBlock } from './header_catalog.js';
 
 
+
 headerCatalog.addEventListener('mouseenter', addBlock)
 headerCategory.addEventListener('mouseleave', removeBlock)
 headerCatalog.addEventListener('mouseleave', removeBlock)

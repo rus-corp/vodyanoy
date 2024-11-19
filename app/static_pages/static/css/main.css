@@ -12,7 +12,12 @@
 body {
   width: 100%;
   background-color: #f0f0f0;
-} 
+}
+
+button:hover {
+  background-color: #7a9dd1;
+  transition: .7s ease;
+}
 
 .container {
   max-width: 90%;
