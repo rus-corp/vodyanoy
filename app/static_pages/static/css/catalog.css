@@ -50,10 +50,12 @@
 }
 
 .subcategory_list {
+  margin-left: 2rem;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
 }
 
 .subcategory__item {
@@ -87,10 +89,11 @@
 
 
 .catalog_products_list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   width: 100%;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
   margin-left: 2rem;
 }
 
