@@ -36,7 +36,7 @@ class ProductListView(generic.ListView):
     
     return queryset
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     self.sub_category = SubCategory.objects.select_related('main_category').get(slug=self.kwargs['slug'])
     main_category = self.sub_category.main_category
@@ -51,12 +51,12 @@ class ProductDetailView(generic.DetailView):
   template_name = 'product/product_detail.html'
   context_object_name = 'product'
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['page_title'] = context['product'].name
     return context
   
-  def get_queryset(self) -> QuerySet[Any]:
+  def get_queryset(self):
     queryset = Product.objects.filter(slug=self.kwargs['slug']).select_related('manufacturer').select_related('sub_category')
     return queryset
   

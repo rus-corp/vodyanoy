@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 from ..news.models import News
 from ..product.models import MainCategory, SubCategory, Product
+from ..manufacturer.models import Manufacturer
 # from .mixins import StaticPageMixin
 
 from .models import SpecialOffer
@@ -22,7 +23,8 @@ class HomePageView(TemplateView):
     context['page_title'] = 'Магазин инженерной сантехники'
     context['slider_images'] = SpecialOffer.objects.all()
     context['news_list'] = News.objects.all()[:8]
-    context['brand_list'] = Product.objects.all()[:5]
+    context['brand_list'] = Manufacturer.objects.all()[:5]
+    context['product_list'] = Product.objects.all()[:4]
     
     return context
 
@@ -30,7 +32,7 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
   template_name = 'static_page/about_page.html'
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['page_title'] = 'О компании'
     context['sub_categories'] = SubCategory.objects.all()
@@ -40,7 +42,7 @@ class AboutPageView(TemplateView):
 class DeliveryPageView(TemplateView):
   template_name = 'static_page/delivery_page.html'
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['page_title'] = 'Бесплатная Доставка в компании '
     return context

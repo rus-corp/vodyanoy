@@ -1,0 +1,56 @@
+networks:
+  vodyanoy:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:14.5
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    restart: always
+    volumes:
+      - ./docker-data/psql:/var/lib/postgresql/data
+    networks:
+      - vodyanoy
+  
+  
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./static:/app/static
+    depends_on:
+      - db
+    command: >
+      sh -c "python manage.py collectstatic --noinput && gunicorn vodyanoy_back.wsgi --bind 0.0.0.0:8000"
+    networks:
+      - vodyanoy
+  
+
+  nginx:
+    image: nginx:1.23-alpine
+    container_name: "nginx"
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./static:/static
+    depends_on:
+      - web
+    networks:
+      - vodyanoy

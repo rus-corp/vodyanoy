@@ -61,74 +61,25 @@
     </div>
     <div class="main-catalog__products">
       <div class="main-catalog__item">
-        <div draggable="true" class="product">
-          <a href="">
-            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
-            <div class="product-content">
-              <h3 class="product__title">Lorem, ipsum dolor.</h3>
-              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
-            </div>
-            <div class="product_price">
-              <div class="product_price__value">10000&nbsp;</div>
-              <div class="product_price__currency">&#x20b8;</div>
-            </div>
-          </a>
-            <div class="product_btn">
-              <button class="product__buy">Купить</button>
-              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
-            </div>
-        </div>
-        <div draggable="true" class="product">
-          <a href="">
-            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
-            <div class="product-content">
-              <h3 class="product__title">Lorem, ipsum dolor.</h3>
-              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
-            </div>
-            <div class="product_price">
-              <div class="product_price__value">10000&nbsp;</div>
-              <div class="product_price__currency">&#x20b8;</div>
-            </div>
-          </a>
-            <div class="product_btn">
-              <button class="product__buy">Купить</button>
-              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
-            </div>
-        </div>
-        <div draggable="true" class="product">
-          <a href="">
-            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
-            <div class="product-content">
-              <h3 class="product__title">Lorem, ipsum dolor.</h3>
-              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
-            </div>
-            <div class="product_price">
-              <div class="product_price__value">10000&nbsp;</div>
-              <div class="product_price__currency">&#x20b8;</div>
-            </div>
-          </a>
-            <div class="product_btn">
-              <button class="product__buy">Купить</button>
-              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
-            </div>
-        </div>
-        <div draggable="true" class="product">
-          <a href="">
-            <img class="product__img" src="{% static 'img/logo/vod_logo.png' %}" alt="">
-            <div class="product-content">
-              <h3 class="product__title">Lorem, ipsum dolor.</h3>
-              <p class="product__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, numquam!</p>
-            </div>
-            <div class="product_price">
-              <div class="product_price__value">10000&nbsp;</div>
-              <div class="product_price__currency">&#x20b8;</div>
-            </div>
-          </a>
-            <div class="product_btn">
-              <button class="product__buy">Купить</button>
-              <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
-            </div>
-        </div>
+        {% for product in product_list %}
+          <div class="product">
+            <a href="{{product.get_absolute_url}}">
+              <img class="product__img" src="{{product.photo.url}}" alt="{{product.name}}">
+              <div class="product-content">
+                <h3 class="product__title">{{product.name}}</h3>
+                <p class="product__desc">{{product.desc}}</p>
+              </div>
+              <div class="product_price">
+                <div class="product_price__value">{{product.price}}&nbsp;</div>
+                <div class="product_price__currency">&#x20b8;</div>
+              </div>
+            </a>
+              <div class="product_btn">
+                <button class="product__buy">Купить</button>
+                <img class="add-to-favorite" src="{% static 'img/header_img/heart.png' %}" alt="">
+              </div>
+          </div>
+        {% endfor %}
       </div>  
     </div>
   </div>

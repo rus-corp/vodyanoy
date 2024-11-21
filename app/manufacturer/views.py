@@ -14,7 +14,7 @@ class ManufacturerListView(generic.ListView):
   template_name = 'manufacturer/manufacturer.html'
   context_object_name = 'manufacturers'
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['countries'] = ManufacturerCountry.objects.all()
     context['page_title'] = 'Бренды в магазине'
@@ -35,7 +35,7 @@ class ManufacturerListView(generic.ListView):
 class ManuListView(generic.ListView):
   template_name = 'manufacturer/form_test.html'
   
-  def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+  def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['form'] = ManufacturerForm
     return context

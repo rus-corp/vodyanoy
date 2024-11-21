@@ -32,9 +32,13 @@
   /* box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2); */
 }
 
-.brand_item img {
+.brand_img {
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+}
+
+.brand_img > img {
+  object-fit: cover;
 }
